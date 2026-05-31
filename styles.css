@@ -31,9 +31,11 @@ body {
 .foto-container img {
   max-width: 480px;
   height: auto;
-  border-radius: 20px;
+  border-radius: 15px;
   position: relative;
   z-index: 1;
+
+  box-shadow: 0px 20px 40px rgba(0,0,0,0.25);
 
 }
 .mancha {
@@ -91,9 +93,9 @@ body::before {
   width: 300px;
   height: 300px;
 
-  border: 10px solid #1e2a38;
+  border: 10px solid #234285;
   border-radius: 50%;
-  opacity: 0.3;
+  opacity: 1.3;
 }
 
 /*🔹 Círculo en esquina  */
@@ -104,11 +106,11 @@ body::after {
   right: 50px;
 
   width: 100px;
-  height: 100px;
+  height: 80px;
 
-  background-image: radial-gradient(#000 2px, transparent 2px);
+  background-image: radial-gradient(#1e3a78 2px, transparent 2px);
   background-size: 20px 20px;
-  opacity: 0.2;
+  opacity: 1.5;
 }
 
  .h1 {
@@ -204,7 +206,8 @@ body::after {
 }
 .home-content p {
   font-size: 23px;
-  
+  font-weight: 450;
+  color: black
 
 }
 .home-content .btn-box {
@@ -234,9 +237,9 @@ body::after {
   z-index: 1;
 
 }
-.btn-box a:ntn-child(2){
-  background: transparent;
-  color:#556996;
+.btn-box a:nth-child(2){
+  background: black;
+  color: white;
 
 }
 .btn-box a::before{
@@ -333,17 +336,28 @@ body::after {
 
     transform: translateY(0);
 }
+.dots {
+  width: 200px;
+  height: 200px;
+
+  background-image:
+    radial-gradient(#1e3a78 2px, transparent 2px);
+
+  background-size: 20px 20px;
+
+  opacity: 0.8;
+
+  position: absolute;
+
+  top: 244px;
+  left : 60px;
+}
 
 /* ========================= */
 /* 🔥 MOBILE (CORREGIDO BIEN) */
 /* ========================= */
 
 @media (max-width: 1100px){
-
-body {
-  background: #f0f0f0;
-}
-
 
 /*🔹 2. Layout (estructura general)  */
 .container {
@@ -367,79 +381,7 @@ body {
 
   left: 200px;
 }
-.mancha {
-  position: absolute;
 
-  width: 300px;
-  height: 300px;
-
-  left: -300px;
-  top: -5px;
-
-  opacity: 1;
-  background: #021732;
-
-  z-index: 0;
-
-}
-
-/* 🔹 5. Efectos / decoraciones (pseudo-elementos) */
-.foto-container::before {
-  content: "";
-  position: absolute;
-  width: 420px;
-  height: 420px;
-  top: 50px;
-  left: -50px;
-  transform: translate(-50%, -50%)
-   rotate(-10deg);
-  border-radius: 50px;
-  z-index: 1; /* queda detrás */
-  
-  filter : blur(0.5px);
-}
-
-/* 🔹 6. Texto y detalles finales */
-.info h1 {
-  font-size: 42px;
-  border-left: 5px solid #1e2a38;
-  padding-left: 15px;
-}
-
-/*🔹 7. Hover / animaciones (SIEMPRE al final)  */
-.img:hover {
-  transform: scale(1.05);
-  transition: 0.3s;
-}
-
-/* 🔹 Puntitos decorativos */
-body::before {
-  content: "";
-  position: fixed;
-  top: -100px;
-  right: -100px;
-
-  width: 300px;
-  height: 300px;
-
-  border: 10px solid #1e2a38;
-  border-radius: 50%;
-  opacity: 0.3;
-}
-
-/*🔹 Círculo en esquina  */
-body::after {
-  content: "";
-  position: fixed;
-  top: 50px;
-  right: 50px;
-
-  width: 100px;
-  height: 100px;
-  
-  background-size: 20px 20px;
-  opacity: 0.2;
-}
 .h1{  
   font-size:80px;
   font-weight: 730;
@@ -455,51 +397,10 @@ body::after {
     left: 810px;
   }
 
-/* ICONOS */
-
-.socials a{
-    position: static;
-    font-size: 60px;
-    color: #5870a8;
-
-    transition: 0.3s ease;
-}
-
-/* HOVER */
-.socials a:hover{
-    transform: scale(1.2);
-    color: black;
-}
-.header{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 85%;
-  padding: 22px 10%;
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  z-index: 100;
-}
-
 .navbar{
     display: flex;
     align-items: center;
     gap: 90px;
-}
-
-.navbar a{
- font-size: 25px;
- color: #5870a8;
- text-decoration: none;
- font-weight: 700;
- transition: 0.3s;
-}
-.navbar a:hover,
-.navbar a.active,
-.dropbtn:hover{
-    color: white;
-    transform: translateY(-2px);
 }
 .home {
    height: 10vh;
@@ -536,7 +437,8 @@ body::after {
 }
 .home-content p {
   font-size: 23px;
-  
+  font-weight: 450;
+  color: black
 
 }
 .home-content .btn-box {
@@ -566,9 +468,9 @@ body::after {
   z-index: 1;
 
 }
-.btn-box a:ntn-child(2){
-  background: transparent;
-  color:#556996;
+.btn-box a:nth-child(2){
+  background: black;
+  color: white;
 
 }
 .btn-box a::before{
@@ -588,18 +490,14 @@ body::after {
    width: 100%;
 
 }
-.logo{
-   width: 70px;
-   height: auto;
-   object-fit: contain;
 
-   margin-left: -20px;
-   position: relative;
-   right: 60px;
-   top: 30px;
-
-   margin-top: -55px;
+.logo {
+  position: relative;
+  top: 10px;
+  right: 60px;
+  width: 70px;
 }
+
 /* ===== DROPDOWN MENU ===== */
 
 .dropdown{
@@ -668,5 +566,34 @@ body::after {
     visibility: visible;
 
     transform: translateY(0);
+}
+.logo{
+   width: 70px;
+   height: auto;
+   object-fit: contain;
+
+   margin-left: -20px;
+   position: relative;
+   right: 60px;
+   top: 30px;
+
+   margin-top: -55px;
+
+}
+.dots {
+  width: 200px;
+  height: 200px;
+
+  background-image:
+    radial-gradient(#1e3a78 2px, transparent 2px);
+
+  background-size: 20px 20px;
+
+  opacity: 0.8;
+
+  position: absolute;
+
+  top: 244px;
+  left : 60px;
 }
 }
